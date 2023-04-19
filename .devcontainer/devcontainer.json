@@ -1,0 +1,23 @@
+{
+  "name": "GEM apiha",
+  "image": "gem-apiha:latest",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "runArgs": [
+    "--name=gem-apiha",
+    "--tty"
+  ],
+  "postStartCommand": "sh .devcontainer/start.sh",
+  "shutdownAction": "stopContainer",
+  "customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+        "misogi.ruby-rubocop",
+        "castwide.solargraph"
+      ]
+		}
+  }
+}
